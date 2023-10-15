@@ -31,3 +31,5 @@ D:\University\.NET\obj\Debug\net6.0\.NET.pdb
 D:\University\.NET\obj\Debug\net6.0\.NET.genruntimeconfig.cache
 D:\University\.NET\obj\Debug\net6.0\ref\.NET.dll
 D:\University\.NET\bin\Debug\net6.0\books.json
+D:\University\.NET\obj\Debug\net6.0\.NET.RazorAssemblyInfo.cache
+D:\University\.NET\obj\Debug\net6.0\.NET.RazorAssemblyInfo.cs

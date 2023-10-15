@@ -5,7 +5,9 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddScoped<CalculateService>();
 builder.Services.AddControllers();
 builder.Services.AddTransient<TimeService>();
+builder.Services.AddControllersWithViews();
 var app = builder.Build();
+app.UseMiddleware<ErrorLogMiddleware>();
 app.MapControllers();
 
 

@@ -15,3 +15,7 @@ build_property.SupportLocalizedComponentNames =
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
 build_property.MSBuildProjectDirectory = D:\University\.NET
 build_property._RazorSourceGeneratorDebug = 
+
+[D:/University/.NET/Views/cookies.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcY29va2llcy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
