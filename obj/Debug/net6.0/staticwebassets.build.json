@@ -1,11 +1,46 @@
 {
   "Version": 1,
-  "Hash": "mKWi0pTEB5uCQEFDRg9fuRtd8oXekDVOhFQpdjB0RFM=",
-  "Source": ".NET",
-  "BasePath": "_content/.NET",
+  "Hash": "L2toyX1wiwivzGzH+FOZ76F0Ww2Lk5uMLPn7HOZ6dC0=",
+  "Source": "WebApplication1",
+  "BasePath": "_content/WebApplication1",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [],
   "DiscoveryPatterns": [],
-  "Assets": []
+  "Assets": [
+    {
+      "Identity": "C:\\Users\\Alexander\\source\\repos\\WebApplication1\\WebApplication1\\obj\\Debug\\net6.0\\scopedcss\\bundle\\WebApplication1.styles.css",
+      "SourceId": "WebApplication1",
+      "SourceType": "Computed",
+      "ContentRoot": "C:\\Users\\Alexander\\source\\repos\\WebApplication1\\WebApplication1\\obj\\Debug\\net6.0\\scopedcss\\bundle\\",
+      "BasePath": "_content/WebApplication1",
+      "RelativePath": "WebApplication1.styles.css",
+      "AssetKind": "All",
+      "AssetMode": "CurrentProject",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "ScopedCss",
+      "AssetTraitValue": "ApplicationBundle",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "C:\\Users\\Alexander\\source\\repos\\WebApplication1\\WebApplication1\\obj\\Debug\\net6.0\\scopedcss\\bundle\\WebApplication1.styles.css"
+    },
+    {
+      "Identity": "C:\\Users\\Alexander\\source\\repos\\WebApplication1\\WebApplication1\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\WebApplication1.bundle.scp.css",
+      "SourceId": "WebApplication1",
+      "SourceType": "Computed",
+      "ContentRoot": "C:\\Users\\Alexander\\source\\repos\\WebApplication1\\WebApplication1\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\",
+      "BasePath": "_content/WebApplication1",
+      "RelativePath": "WebApplication1.bundle.scp.css",
+      "AssetKind": "All",
+      "AssetMode": "Reference",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "ScopedCss",
+      "AssetTraitValue": "ProjectBundle",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "C:\\Users\\Alexander\\source\\repos\\WebApplication1\\WebApplication1\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\WebApplication1.bundle.scp.css"
+    }
+  ]
 }

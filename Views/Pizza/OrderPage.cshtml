@@ -1,0 +1,63 @@
+@model AspNetMVC.Models.User
+
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        h2 {
+            font-size: 24px;
+            color: #333;
+        }
+
+        h3 {
+            font-size: 18px;
+            color: #666;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            font-weight: bold;
+            display: block;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        .btn {
+            background-color: #007bff;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+            .btn:hover {
+                background-color: #0056b3;
+            }
+    </style>
+</head>
+<body>
+    <h2>Ordering...</h2>
+    <form asp-action="OrderPage" method="post">
+        @for (var i = 0; i < Model.Pizza.Count; i++)
+        {
+            <div class="form-group">
+                <label asp-for="Pizza[i].Name">Name:</label>
+                <input asp-for="Pizza[i].Name" class="form-control" readonly />
+                <label asp-for="Pizza[i].Count">Count:</label>
+                <input type="number" asp-for="Pizza[i].Count" class="form-control" />
+            </div>
+        }
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</body>
+</html>
