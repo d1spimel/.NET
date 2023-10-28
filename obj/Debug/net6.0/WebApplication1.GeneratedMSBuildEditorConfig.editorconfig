@@ -16,14 +16,6 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Users\Alexander\source\repos\WebApplication1\WebApplication1
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/Alexander/source/repos/WebApplication1/WebApplication1/Views/Pizza/OrderPage.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGl6emFcT3JkZXJQYWdlLmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/Alexander/source/repos/WebApplication1/WebApplication1/Views/Pizza/OrderSummary.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGl6emFcT3JkZXJTdW1tYXJ5LmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/Alexander/source/repos/WebApplication1/WebApplication1/Views/Pizza/Register.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGl6emFcUmVnaXN0ZXIuY3NodG1s
+[C:/Users/Alexander/source/repos/WebApplication1/WebApplication1/Views/File/DownloadFile.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRmlsZVxEb3dubG9hZEZpbGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 

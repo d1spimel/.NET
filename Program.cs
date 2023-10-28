@@ -22,8 +22,9 @@ app.UseRouting();
 app.UseEndpoints(endpoints =>
 {
     endpoints.MapControllerRoute(
-        name: "default",
-        pattern: "{controller=Pizza}/{action=Register}/{id?}");
+       name: "default",
+       pattern: "{controller=File}/{action=DownloadFile}/{id?}");
+
 });
 
 app.Run();
