@@ -1,8 +1,8 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using AspNetMVC.Models;
+using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
-using WebApplication2.Models;
 
-namespace WebApplication2.Controllers
+namespace AspNetMVC.Controllers
 {
     public class HomeController : Controller
     {
@@ -15,16 +15,7 @@ namespace WebApplication2.Controllers
 
         public IActionResult Index()
         {
-            // Створення колекції з даними Product
-            List<Product> products = new List<Product>
-            {
-                new Product { ID = 1, Name = "Product 1", Price = 10.99m, CreatedDate = DateTime.Now },
-                new Product { ID = 2, Name = "Product 2", Price = 19.99m, CreatedDate = DateTime.Now },
-                new Product { ID = 3, Name = "Product 3", Price = 7.99m, CreatedDate = DateTime.Now },
-            };
-
-            // Передача колекції як моделі до представлення
-            return View(products);
+            return View();
         }
 
         public IActionResult Privacy()

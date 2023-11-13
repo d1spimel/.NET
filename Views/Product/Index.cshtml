@@ -1,0 +1,27 @@
+﻿﻿@using AspNetMVC.Models
+@{
+    List<ProductModel> products = new List<ProductModel>();
+
+    products.Add(new ProductModel { ID = 1, Name = "Computer", Price = 1.29M });
+    products.Add(new ProductModel { ID = 2, Name = "Smartphone", Price = 4.5M });
+    products.Add(new ProductModel { ID = 3, Name = "Laptop", Price = 6 });
+    products.Add(new ProductModel { ID = 4, Name = "Tablet", Price = 2.75M });
+    products.Add(new ProductModel { ID = 5, Name = "Headphones", Price = 3.99M });
+    products.Add(new ProductModel { ID = 6, Name = "Camera", Price = 8.15M });
+    products.Add(new ProductModel { ID = 7, Name = "Smartwatch", Price = 5.99M });
+    products.Add(new ProductModel { ID = 8, Name = "Printer", Price = 3.25M });
+    products.Add(new ProductModel { ID = 9, Name = "External Hard Drive", Price = 7.49M });
+    products.Add(new ProductModel { ID = 10, Name = "Wireless Mouse", Price = 2.99M });
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta content="width=device-width" />
+    <title>Product Page</title>
+</head>
+<body>
+    <div>
+        @await Component.InvokeAsync("Product", new {products = products})
+    </div>
+</body>
+</html>
