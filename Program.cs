@@ -1,7 +1,14 @@
+using WebApplication6.Filters;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-builder.Services.AddControllersWithViews();
+builder.Services.AddControllersWithViews(options =>
+{
+    // Добавление фильтров глобально для всего контролера
+    options.Filters.Add(new LogActionFilter());
+    options.Filters.Add(new UniqueUserFilter());
+});
 
 var app = builder.Build();
 
@@ -23,9 +30,8 @@ app.UseAuthorization();
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");
-
 app.MapControllerRoute(
-    name: "consultation",
-    pattern: "{controller=Consultation}/{action=Index}/{id?}");
+    name: "default",
+    pattern: "{controller=Filter}/{action=Index}");
 
 app.Run();
