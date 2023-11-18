@@ -2,7 +2,6 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
-builder.Services.AddHttpClient(); // Add this line to register IHttpClientFactory
 
 var app = builder.Build();
 
@@ -24,13 +23,9 @@ app.UseAuthorization();
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");
+
 app.MapControllerRoute(
-    name: "product",
-    pattern: "{controller=Product}/{action=Index}",
-    defaults: new { controller = "Product" });
-app.MapControllerRoute(
-    name: "weather",
-    pattern: "{controller=Weather}/{action=Index}",
-    defaults: new { controller = "Weather" });
+    name: "consultation",
+    pattern: "{controller=Consultation}/{action=Index}/{id?}");
 
 app.Run();

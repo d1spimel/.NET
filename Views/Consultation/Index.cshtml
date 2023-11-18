@@ -1,0 +1,37 @@
+﻿@model ConsultationRequest
+
+<h2>Форма реєстрації на консультацію</h2>
+
+<form asp-action="Index" method="post">
+    <div class="mb-3">
+        <label asp-for="Name" class="form-label"></label>
+        <input asp-for="Name" class="form-control"/>
+        <span asp-validation-for="Name"></span>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="Email" class="form-label"></label>
+        <input asp-for="Email" type="email" class="form-control"/>
+        <span asp-validation-for="Email"></span>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="DesiredDate" class="form-label"></label>
+        <input asp-for="DesiredDate" type="date" class="form-control"/>
+        <span asp-validation-for="DesiredDate"></span>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="SelectedProduct" class="form-label"></label>
+        <select asp-for="SelectedProduct" class="form-select">
+            <option value="JavaScript">JavaScript</option>
+            <option value="C#">C#</option>
+            <option value="Java">Java</option>
+            <option value="Python">Python</option>
+            <option value="Основи">Основи</option>
+        </select>
+        <span asp-validation-for="SelectedProduct"></span>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Зареєструватися</button>
+</form>
