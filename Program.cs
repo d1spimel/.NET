@@ -1,37 +1,69 @@
-using WebApplication6.Filters;
+using WebApplication8.Models;
+using WebApplication8.Models.Data;
 
-var builder = WebApplication.CreateBuilder(args);
-
-// Add services to the container.
-builder.Services.AddControllersWithViews(options =>
+public class Program
 {
-    // Добавление фильтров глобально для всего контролера
-    options.Filters.Add(new LogActionFilter());
-    options.Filters.Add(new UniqueUserFilter());
-});
+    public static void Main(string[] args)
+    {
+        IHost host = CreateHostBuilder(args).Build();
 
-var app = builder.Build();
+        using (AppDbContext dbcontext = new AppDbContext())
+        {
+            dbcontext.Users.AddRange(
+                new User { Name = "John", Surname = "Doe", Age = 25 },
+                new User { Name = "Jane", Surname = "Smith", Age = 30 },
+                new User { Name = "Alice", Surname = "Johnson", Age = 22 }
+            );
 
-// Configure the HTTP request pipeline.
-if (!app.Environment.IsDevelopment())
-{
-    app.UseExceptionHandler("/Home/Error");
-    // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
-    app.UseHsts();
+            dbcontext.SaveChanges();
+
+            var users = dbcontext.Users.ToList();
+            foreach (var user in users)
+            {
+                Console.WriteLine($"Id: {user.Id}, Name: {user.Name}, Surname: {user.Surname}, Age: {user.Age}");
+            }
+        }
+        host.Run();
+    }
+
+    public static IHostBuilder CreateHostBuilder(string[] args) =>
+        Host.CreateDefaultBuilder(args)
+            .ConfigureWebHostDefaults(webBuilder =>
+            {
+                webBuilder.UseStartup<Program>();
+                webBuilder.ConfigureServices(services =>
+                {
+                    services.AddMvc();
+                    services.AddDbContext<AppDbContext>();
+                });
+                webBuilder.Configure(app =>
+                {
+                    var env = app.ApplicationServices.GetRequiredService<IWebHostEnvironment>();
+
+                    if (env.IsDevelopment())
+                    {
+                        app.UseDeveloperExceptionPage();
+                    }
+                    else
+                    {
+                        app.UseExceptionHandler("/Home/Error");
+                        app.UseHsts();
+                    }
+
+                    app.UseHttpsRedirection();
+                    app.UseStaticFiles();
+
+                    app.UseRouting();
+
+                    app.UseEndpoints(endpoints =>
+                    {
+                        endpoints.MapControllerRoute(
+                            name: "default",
+                            pattern: "{controller=Home}/{action=Index}/{id?}");
+                        endpoints.MapControllerRoute(
+                            name: "company",
+                            pattern: "{controller=Company}/{action=Index}");
+                    });
+                });
+            });
 }
-
-app.UseHttpsRedirection();
-app.UseStaticFiles();
-
-app.UseRouting();
-
-app.UseAuthorization();
-
-app.MapControllerRoute(
-    name: "default",
-    pattern: "{controller=Home}/{action=Index}/{id?}");
-app.MapControllerRoute(
-    name: "default",
-    pattern: "{controller=Filter}/{action=Index}");
-
-app.Run();
